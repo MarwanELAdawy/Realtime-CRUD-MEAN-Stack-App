@@ -5,6 +5,7 @@ var logger = require('morgan');
 var mongoose = require("mongoose");
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var salesRouter = require('./routes/sales');
 
 var cors = require("cors");
 
@@ -26,5 +27,6 @@ mongoose.connect('mongodb://localhost/blog-cms',{
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/api', salesRouter);
 
 module.exports = app;
